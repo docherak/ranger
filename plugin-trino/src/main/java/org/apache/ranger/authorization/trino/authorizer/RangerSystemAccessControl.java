@@ -606,6 +606,14 @@ public class RangerSystemAccessControl
     }
   }
 
+  @Override
+  public void checkCanAlterColumn(SystemSecurityContext context, CatalogSchemaTableName table) {
+    RangerTrinoResource res = createResource(table);
+    if (!hasPermission(res, context, TrinoAccessType.ALTER)) {
+      LOG.debug("RangerSystemAccessControl.checkCanAlterColumn(" + table.getSchemaTableName().getTableName() + ") denied");
+      AccessDeniedException.denyAlterColumn(table.getSchemaTableName().getTableName());
+    }
+  }
   /**
    * This is evaluated on table level
    */
@@ -666,6 +674,11 @@ public class RangerSystemAccessControl
       LOG.debug("RangerSystemAccessControl.checkCanKillQueryOwnedBy(" + queryOwner.getUser() + ") denied");
       AccessDeniedException.denyImpersonateUser(identity.getUser(), queryOwner.getUser());
     }
+  }
+
+  @Override
+  public void checkCanUpdateTableColumns(SystemSecurityContext securityContext, CatalogSchemaTableName table, Set<String> updatedColumnNames) {
+    SystemAccessControl.super.checkCanUpdateTableColumns(securityContext, table, updatedColumnNames);
   }
 
   /** FUNCTIONS **/
