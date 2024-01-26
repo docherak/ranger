@@ -130,6 +130,8 @@
                     <include>org.apache.orc:orc-core:jar:${orc.version}</include>
                     <include>org.apache.orc:orc-shims:jar:${orc.version}</include>
                     <include>io.airlift:aircompressor:jar:${aircompressor.version}</include>
+                    <include>org.apache.logging.log4j:log4j-api:jar:${log4j2.version}</include>
+                    <include>org.openjdk.nashorn:nashorn-core:jar:${nashorn.version}</include>
                 </includes>
             </binaries>
         </moduleSet>

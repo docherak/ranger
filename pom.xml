@@ -178,13 +178,14 @@
         <mockito.version>3.0.0</mockito.version>
         <mockito.all.version>1.10.19</mockito.all.version>
         <mysql-connector-java.version>5.1.49</mysql-connector-java.version>
+        <nashorn.version>15.4</nashorn.version>
         <netty-all.version>4.1.100.Final</netty-all.version>
         <noggit.version>0.8</noggit.version>
         <orc.core.version>1.6.7</orc.core.version>
         <owasp-java-html-sanitizer.version>20211018.2</owasp-java-html-sanitizer.version>
         <paranamer.version>2.3</paranamer.version>
         <presto.version>333</presto.version>
-        <trino.version>433</trino.version>
+        <trino.version>436</trino.version>
         <poi.version>5.2.2</poi.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <protobuf-java.version>3.19.3</protobuf-java.version>
@@ -244,7 +245,8 @@
         <net.minidev.asm.version>1.0.2</net.minidev.asm.version>
         <org.bouncycastle.bcprov-jdk15on>1.70</org.bouncycastle.bcprov-jdk15on>
         <org.bouncycastle.bcpkix-jdk15on>1.70</org.bouncycastle.bcpkix-jdk15on>
-        <lucene.version>8.4.0</lucene.version>
+        <lucene.version>8.8.0</lucene.version>
+        <lucene-spatial.version>8.4.0</lucene-spatial.version>
         <hppc.version>0.8.0</hppc.version>
         <joda.time.version>2.10.6</joda.time.version>
         <nimbus-jose-jwt.version>9.31</nimbus-jose-jwt.version>
