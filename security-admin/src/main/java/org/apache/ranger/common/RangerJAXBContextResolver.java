@@ -21,10 +21,11 @@
 
 import javax.ws.rs.ext.ContextResolver;
 import javax.ws.rs.ext.Provider;
-import javax.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBContext;
 
-import com.sun.jersey.api.json.JSONConfiguration;
-import com.sun.jersey.api.json.JSONJAXBContext;
+//import com.sun.jersey.api.json.JSONConfiguration;
+//import com.sun.jersey.api.json.JSONJAXBContext;
+import org.eclipse.persistence.jaxb.JAXBContextFactory;
 
 /**
  *
@@ -53,8 +54,9 @@ public class RangerJAXBContextResolver implements ContextResolver<JAXBContext> {
     };
 
     public RangerJAXBContextResolver() throws Exception {
-	JSONConfiguration config = JSONConfiguration.natural().build();
-	context = new JSONJAXBContext(config, types);
+	//JSONConfiguration config = JSONConfiguration.natural().build();
+	//context = new JSONJAXBContext(config, types);
+	context = JAXBContext.newInstance(types);
     }
 
     @Override

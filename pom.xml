@@ -67,10 +67,10 @@
         </mailingList>
     </mailingLists>
     <properties>
-        <maven.version.required>3.6.3</maven.version.required>
-        <java.version.required>1.8</java.version.required>
-        <javac.source.version>1.8</javac.source.version>
-        <javac.target.version>1.8</javac.target.version>
+        <maven.version.required>3.9.6</maven.version.required>
+        <java.version.required>21</java.version.required>
+        <javac.source.version>21</javac.source.version>
+        <javac.target.version>21</javac.target.version>
         <distMgmtStagingId>apache.staging.https</distMgmtStagingId>
         <distMgmtStagingName>Apache Release Distribution Repository</distMgmtStagingName>
         <distMgmtStagingUrl>https://repository.apache.org/service/local/staging/deploy/maven2</distMgmtStagingUrl>
@@ -895,6 +895,22 @@
     </repositories>
     <dependencyManagement>
         <dependencies>
+            <!-- Define JAXB dependencies -->
+            <dependency>
+                <groupId>jakarta.xml.bind</groupId>
+                <artifactId>jakarta.xml.bind-api</artifactId>
+                <version>4.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>4.0.4</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.xml.bind</groupId>
+                <artifactId>jaxb-impl</artifactId>
+                <version>4.0.4</version>
+            </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
@@ -964,11 +980,6 @@
             <dependency>
                 <groupId>javax.xml.bind</groupId>
                 <artifactId>jaxb-api</artifactId>
-                <version>${jaxb.api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.glassfish.jaxb</groupId>
-                <artifactId>jaxb-runtime</artifactId>
                 <version>${jaxb.api.version}</version>
             </dependency>
             <dependency>
