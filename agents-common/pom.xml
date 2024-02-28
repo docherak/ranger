@@ -134,6 +134,11 @@
             <version>${jna-platform.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.openjdk.nashorn</groupId>
+            <artifactId>nashorn-core</artifactId>
+            <version>${nashorn.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.kstruct</groupId>
             <artifactId>gethostname4j</artifactId>
             <version>${kstruct.gethostname4j.version}</version>
