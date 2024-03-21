@@ -296,6 +296,12 @@
       "name": "execute",
       "label": "execute",
       "category": "READ"
+    },
+    {
+      "itemId": 14,
+      "name": "update",
+      "label": "Update",
+      "category": "UPDATE"
     }
   ],
   "configs": [
