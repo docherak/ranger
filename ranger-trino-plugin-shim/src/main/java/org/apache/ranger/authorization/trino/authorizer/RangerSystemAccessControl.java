@@ -249,8 +249,8 @@ public class RangerSystemAccessControl
     }
   }
 
-  @OverRide
-  public void checkCanUpdateTableColumns(SystemSecurityContext securityContext, CatalogSchemaTableName table, Set updatedColumnNames) {
+  @Override
+  public void checkCanUpdateTableColumns(SystemSecurityContext securityContext, CatalogSchemaTableName table, Set<String> updatedColumnNames) {
     try {
       activatePluginClassLoader();
       systemAccessControlImpl.checkCanUpdateTableColumns(securityContext, table, updatedColumnNames);

@@ -635,8 +635,8 @@ public class RangerSystemAccessControl
     }
   }
 
-  @OverRide
-  public void checkCanUpdateTableColumns(SystemSecurityContext securityContext, CatalogSchemaTableName table, Set updatedColumnNames){
+  @Override
+  public void checkCanUpdateTableColumns(SystemSecurityContext securityContext, CatalogSchemaTableName table, Set<String> updatedColumnNames){
     for (RangerTrinoResource res : createResource(table, updatedColumnNames)) {
       if (!hasPermission(res, securityContext, TrinoAccessType.UPDATE)) {
         LOG.debug("RangerSystemAccessControl.checkCanUpdateTableColumns(" + table.getSchemaTableName().getTableName() + ") denied");
@@ -686,10 +686,10 @@ public class RangerSystemAccessControl
     }
   }
 
-  @Override
-  public void checkCanUpdateTableColumns(SystemSecurityContext securityContext, CatalogSchemaTableName table, Set<String> updatedColumnNames) {
-    SystemAccessControl.super.checkCanUpdateTableColumns(securityContext, table, updatedColumnNames);
-  }
+  //@Override
+  //public void checkCanUpdateTableColumns(SystemSecurityContext securityContext, CatalogSchemaTableName table, Set<String> updatedColumnNames) {
+  //  SystemAccessControl.super.checkCanUpdateTableColumns(securityContext, table, updatedColumnNames);
+  //}
 
   /** FUNCTIONS **/
   @Override
