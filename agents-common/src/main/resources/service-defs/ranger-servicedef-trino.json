@@ -302,6 +302,12 @@
       "name": "update",
       "label": "Update",
       "category": "UPDATE"
+    },
+    {
+      "itemId": 15,
+      "name": "alter_new",
+      "label": "Alter",
+      "category": "ALTER"
     }
   ],
   "configs": [

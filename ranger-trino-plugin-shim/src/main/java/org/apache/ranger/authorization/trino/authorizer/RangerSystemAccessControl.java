@@ -230,6 +230,16 @@ public class RangerSystemAccessControl
   }
 
   @Override
+  public void checkCanAlterColumn(SystemSecurityContext context, CatalogSchemaTableName table) {
+    try {
+      activatePluginClassLoader();
+      systemAccessControlImpl.checkCanAlterColumn(context, table);
+    } finally {
+      deactivatePluginClassLoader();
+    }
+  }
+
+  @Override
   public void checkCanSelectFromColumns(SystemSecurityContext context, CatalogSchemaTableName table, Set<String> columns) {
     try {
       activatePluginClassLoader();
